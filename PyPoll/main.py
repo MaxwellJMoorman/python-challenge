@@ -2,6 +2,7 @@
 
 # Load CSV and os
 import csv
+import os
 
 # Create Lists
 total_votes = []
@@ -23,10 +24,28 @@ with open('election_data.csv') as csvDataFile:
             Unique_ID.append(row[2])    
 
     #Print Results
-    print('Election Result')
+    print('Election Results')
     print('Total # of Votes: {}'.format(len(total_votes)))
     for name in Unique_ID:
         print('{}: {:.3f}% ({})'.format(name,(whom_vote.count(name)/len(total_votes))*100,whom_vote.count(name)))        
+
+        
+# Create txtfile 
+outpath = os.path.join('election_data_analysis.txt')
+
+# Copy analysis to txtfile
+with open(outpath, 'w', newline="") as txtfile:
+    writer = csv.writer(csvDataFile)
+    txtfile.write('Election Results')
+    txtfile.write('\n')
+    txtfile.write('-------------------')
+    txtfile.write('\n')
+    txtfile.write('Total # of Votes: {}'.format(len(total_votes)))
+    txtfile.write('\n')
+    txtfile.write('{}: {:.3f}% ({})'.format(name,(whom_vote.count(name)/len(total_votes))*100,whom_vote.count(name)))
+
+
+    
 
     
 
