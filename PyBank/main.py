@@ -2,6 +2,7 @@
 
 # Load CSV and os
 import csv
+import os
 
 # Create Lists
 total_months = []
@@ -32,11 +33,34 @@ with open('budget_data.csv') as csvDataFile:
     
         # Print results
         print('Financial Analysis')
+        print('\n')
         print('---------------------')
+        print('\n')
         print('Total Months: {}'.format(len(total_months)))
+        print('\n')
         print('Net Profit ${}'.format(net_profit))
+        print('\n')
         print('Greatest Increase in Profits (${}) {}'.format(max(monthly_profit_change),(date[date_increase])))
-        print('Greatest decrease in Profits (${}) {}'.format(min(monthly_profit_change),(date[date_decrease])))
+        print('\n')
+        print('Greatest Decrease in Profits (${}) {}'.format(min(monthly_profit_change),(date[date_decrease])))
+        
+# Create txtfile 
+outpath = os.path.join("budget_data_analysis.txt")
+
+# Copy analysis to txtfile
+with open(outpath, "w", newline="") as txtfile:
+    writer = csv.writer(datafile)
+    txtfile.write("Financial Analysis")
+    txtfile.write("\n")
+    txtfile.write("-----------------------------------")
+    txtfile.write("\n")
+    txtfile.write("Total Months: {}".format(len(total_months)))
+    txtfile.write("\n")
+    txtfile.write("Net Profit: ${}".format(net_profit))
+    txtfile.write("\n")
+    txtfile.write("Greatest Increase in Profits: (${}) {}".format(max(monthly_profit_change),(date[date_increase])))
+    txtfile.write("\n")
+    txtfile.write("Greatest Decrease in Profits: (${}) {}".format(min(monthly_profit_change),(date[date_increase])))
     
 
 
