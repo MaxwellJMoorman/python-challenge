@@ -45,22 +45,22 @@ with open('budget_data.csv') as csvDataFile:
         print('Greatest Decrease in Profits (${}) {}'.format(min(monthly_profit_change),(date[date_decrease])))
         
 # Create txtfile 
-outpath = os.path.join("budget_data_analysis.txt")
+outpath = os.path.join('budget_data_analysis.txt')
 
 # Copy analysis to txtfile
-with open(outpath, "w", newline="") as txtfile:
-    writer = csv.writer(datafile)
-    txtfile.write("Financial Analysis")
-    txtfile.write("\n")
-    txtfile.write("-----------------------------------")
-    txtfile.write("\n")
-    txtfile.write("Total Months: {}".format(len(total_months)))
-    txtfile.write("\n")
-    txtfile.write("Net Profit: ${}".format(net_profit))
-    txtfile.write("\n")
-    txtfile.write("Greatest Increase in Profits: (${}) {}".format(max(monthly_profit_change),(date[date_increase])))
-    txtfile.write("\n")
-    txtfile.write("Greatest Decrease in Profits: (${}) {}".format(min(monthly_profit_change),(date[date_increase])))
+with open(outpath, 'w', newline="") as txtfile:
+    writer = csv.writer(csvDataFile)
+    txtfile.write('Financial Analysis')
+    txtfile.write('\n')
+    txtfile.write('-------------------')
+    txtfile.write('\n')
+    txtfile.write('Total Months: {}'.format(len(total_months)))
+    txtfile.write('\n')
+    txtfile.write('Net Profit: ${}'.format(net_profit))
+    txtfile.write('\n')
+    txtfile.write('Greatest Increase in Profits: (${}) {}'.format(max(monthly_profit_change),(date[date_increase])))
+    txtfile.write('\n')
+    txtfile.write('Greatest Decrease in Profits: (${}) {}'.format(min(monthly_profit_change),(date[date_increase])))
     
 
 
