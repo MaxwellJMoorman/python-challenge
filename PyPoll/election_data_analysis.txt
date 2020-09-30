@@ -1,4 +1,4 @@
 Election Results
 -------------------
 Total # of Votes: 3521001
-O'Tooley: 3.000% (105630)
+O'Tooley: 3.00% (105630)

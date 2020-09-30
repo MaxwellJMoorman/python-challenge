@@ -27,7 +27,7 @@ with open('election_data.csv') as csvDataFile:
     print('Election Results')
     print('Total # of Votes: {}'.format(len(total_votes)))
     for name in Unique_ID:
-        print('{}: {:.3f}% ({})'.format(name,(whom_vote.count(name)/len(total_votes))*100,whom_vote.count(name)))        
+        print('{}: {:.2f}% ({})'.format(name,(whom_vote.count(name)/len(total_votes))*100,whom_vote.count(name)))        
 
         
 # Create txtfile 
@@ -42,7 +42,7 @@ with open(outpath, 'w', newline="") as txtfile:
     txtfile.write('\n')
     txtfile.write('Total # of Votes: {}'.format(len(total_votes)))
     txtfile.write('\n')
-    txtfile.write('{}: {:.3f}% ({})'.format(name,(whom_vote.count(name)/len(total_votes))*100,whom_vote.count(name)))
+    txtfile.write('{}: {:.2f}% ({})'.format(name,(whom_vote.count(name)/len(total_votes))*100,whom_vote.count(name)))
 
 
     
